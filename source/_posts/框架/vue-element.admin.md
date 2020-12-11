@@ -1,3 +1,16 @@
+---
+title: vue-element-admin源码学习
+date: 2020-9-10
+updated:
+tags: 源码分析
+categories: 框架
+description: 
+top_img: https://image.yangxiansheng.top/img/undraw_tutorial_video_vtd1.png?imglist
+cover: https://image.yangxiansheng.top/img/undraw_tutorial_video_vtd1.png?imglist
+copyright_author: 努力中的杨先生
+copyright_author_href: https://github.com/251205668
+---
+
 ## 中后台学习
 
 ### 页面的主要路由分析

@@ -1,3 +1,16 @@
+---
+title: 快速上手Springboot(一)
+date: 2020-06-30
+updated:
+tags: springboot
+categories: 框架
+description: 
+top_img: https://image.yangxiansheng.top/img/undraw_robotics_kep0.png?imglist
+cover: https://image.yangxiansheng.top/img/undraw_robotics_kep0.png?imglist
+copyright_author: 努力中的杨先生
+copyright_author_href: https://github.com/251205668
+---
+
 ## java8语法
 
 ### 类和对象

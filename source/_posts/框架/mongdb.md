@@ -1,8 +1,20 @@
-### MongoDB
+---
+title: MongDB快速上手日记(一)
+date: 2020-09-13
+updated:
+tags: 非关系数据库
+categories: 框架
+description: 
+top_img: https://image.yangxiansheng.top/img/undraw_sentiment_analysis_jp6w.png?imglist
+cover: https://image.yangxiansheng.top/img/undraw_sentiment_analysis_jp6w.png?imglist
+copyright_author: 努力中的杨先生
+copyright_author_href: https://github.com/251205668
+---
+## MongoDB
 
 - [文档](https://docs.mongodb.com/)
 
-#### 常用数据库
+### 常用数据库
 
 > 关系型数据库
 
@@ -25,7 +37,7 @@
 - memocache
 
 
-### mongoDB 使用
+## mongoDB 使用
 
 - 推荐docker 方式
     - https://www.runoob.com/docker/docker-install-mongodb.html
@@ -70,7 +82,7 @@ db.users.createIndex({name:1})
 db.users.getIndexes({name:1})
 ```
 
-#### ObjectId 问题
+### ObjectId 问题
 
 ```
 # 插入单条数据,他会把插入后的 id返回给你
@@ -102,11 +114,11 @@ db.users.insertOne({name:'hjx',age:29})
     - 结论：最好不要有这个中心化的东西管理系统 处理这个 主键id
 
 
-#### 如果对数据有强烈要求(准确性)
+### 如果对数据有强烈要求(准确性)
 
 - 电商/订单等问题 **不要用mongoDB，而是mysql**
 
-#### mongoDB 添加字段问题
+### mongoDB 添加字段问题
 
 - 可方便的添加新的字段，不用像 mysql 那样设计的时候 定义扩展字段 (name,age,city ,extra1 , extra2, extra3)
 
@@ -123,7 +135,7 @@ db.users.insert({name:"aaa",age:22,city:"bj"})
 { "_id" : ObjectId("5e8e97169f5bb82134fad5dd"), "name" : "aaa", "age" : 22, "city" : "bj" }
 ```
 
-#### find条件筛选
+### find条件筛选
 
 ```
 # 查找 age = 30的
@@ -157,7 +169,7 @@ db.users.find({},{age:1})
 db.users.find({},{age:0})
 ```
 
-#### update 的大惊喜
+### update 的大惊喜
 
 ```
 # 把你 name=hjx 的数据 改的只有 id 和 age
@@ -167,14 +179,14 @@ db.users.update({name:'hjx'},{age:57})
 db.users.update({name:'hjx'},{$set:{age:57}}) 
 ```
 
-#### `$unset` 滞空值
+### `$unset` 滞空值
 
 ```
 # 去除 age字段
 db.users.update({name:'hjx'},{$unset:{age:true}}) 
 ```
 
-#### `findOneAndUpdate`
+### `findOneAndUpdate`
 
 ```
 更新并返回
@@ -189,14 +201,14 @@ db.users.findOneAndUpdate({name:'hjx'},{$set:{age:11}},{returnNewDockment:true})
 db.users.findOneAndUpdate({name:'hjx'},{$set:{age:11}},{upsert:true}) 
 ```
 
-#### deleteOne
+### deleteOne
 
 ```
 # 删除 name= aa city不存在的
 db.users.deleteOne({name:'aa',city:{$exists:false}})
 ```
 
-### 字段重命名
+## 字段重命名
 
 - https://blog.csdn.net/shellching/article/details/7651721
 
@@ -204,7 +216,7 @@ db.users.deleteOne({name:'aa',city:{$exists:false}})
 db.test.update({}, {$rename : {"abc" : "def"}}, false, true)
 ```
 
-### 聚合操作
+## 聚合操作
 
 ```
 db.users.aggregate([
@@ -229,7 +241,7 @@ db.users.aggregate([
 ])
 ```
 
-### 索引问题
+## 索引问题
 
 ```
 # name 根据升序排列
@@ -255,12 +267,12 @@ db.users.getIndexes()
 - [mongoose是什么鬼](https://sltrust.github.io/2018/05/10/MONGODB_006_mongoose/)
 - [Schema和Model](https://sltrust.github.io/2018/05/10/MONGODB_007_Schema%E5%92%8CModel/)
 
-### MongoDB
+## MongoDB
 
 MongoDB作为最流行的NoSQL数据库之一，运用灰常广泛，其友好的JSON支持和灵活的表单结构，使其在使用Node.js开发的诸多Web应用中非常受欢迎
 在高性能分布式存储领域，MongoDB也有一席之地，然而MongoDB对事务的不友好和过于灵活的特性也带来了一些问题
 
-#### mongoose
+### mongoose
 
 mongoose是MongoDB的Node.js框架，在处理MongoDB表管理、验证方面有方便之处
 
@@ -323,7 +335,7 @@ db.on('error', (e) => {
 });
 ```
 
-#### Schema属性和验证
+### Schema属性和验证
 
 ```
 {
@@ -343,7 +355,7 @@ db.on('error', (e) => {
 }
 ```
 
-#### 查询（流）
+### 查询（流）
 
 ```
 const query = Model.find({name:{$regex:"a"}});
