@@ -37,7 +37,8 @@ page
   div
     height 100%
 ```
-:::tip 背景图background拓展
+{% note blue no-icon %}
+背景图background拓展
 - 多个背景图叠加
   
   效果图:
@@ -106,7 +107,7 @@ page
     background url('') no-repeat center center fixed
     background-size cover
   ```
-:::
+{% endnote %}
 
 ## 图片制为灰色
 
@@ -127,7 +128,7 @@ page
       background-position 0              
 ```
 
-:::tip 拓展
+{% note pink no-icon %}
 box-shadow效果
 
 ![](https://image.yangxiansheng.top/img/GIF.gif?imagelist)
@@ -212,7 +213,7 @@ box-shadow效果
       -webkit-line-clamp: inherit;
     }
 ```
-:::
+{% endnote %}
 
 ## 文字截断
 
